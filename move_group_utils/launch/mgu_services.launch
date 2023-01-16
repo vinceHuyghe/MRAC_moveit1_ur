@@ -1,0 +1,4 @@
+<launch>  
+    <node name="mgu_pose_array_vis" pkg="move_group_utils" type="visualize_poses.py" output="screen"/>
+    <node name="mgu_trajectory_vis" pkg="move_group_utils" type="visualize_trajectory.py" output="screen"/>  
+</launch>

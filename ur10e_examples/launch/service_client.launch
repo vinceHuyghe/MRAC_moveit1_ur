@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find ur10e_moveit_config)/launch/demo.launch"/>
+    <include file= "$(find move_group_utils)/launch/mgu_services.launch"/> 
+    <node name="random_pose_service" pkg="ur10e_examples" type="random_pose_service.py" output="screen"/>
+    <node name="service_client" pkg="ur10e_examples" type="service_client.py" output="screen"/>   
+</launch>

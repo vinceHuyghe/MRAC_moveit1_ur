@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/dev_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/dev_ws/src/Universal_Robots_ROS_Driver/controller_stopper/include/**",
+        "/dev_ws/src/stomp/include/**",
+        "/dev_ws/src/stomp_ros/stomp_moveit/include/**",
+        "/dev_ws/src/stomp_ros/stomp_plugins/include/**",
+        "/dev_ws/src/Universal_Robots_ROS_Driver/ur_calibration/include/**",
+        "/dev_ws/src/universal_robot/ur_kinematics/include/**",
+        "/dev_ws/src/Universal_Robots_ROS_Driver/ur_robot_driver/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

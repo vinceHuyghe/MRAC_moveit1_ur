@@ -1,0 +1,26 @@
+<launch>
+    <!-- Moveit config -->
+    <!-- <include file="$(find ur10e_moveit_config)/launch/demo.launch" /> -->
+    <include file= "$(find move_group_utils)/launch/mgu_services.launch"/>   
+    <!-- Tf publisher that links camera link to tool0 -->
+    <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster" args="0 0 0.045 0.5 -0.5 0.5 0.5 tool0 camera_link 100" />
+    <!-- Realsense -->
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <!-- <arg name="enable_pointcloud" value="true" /> -->
+        <!-- <arg name="ordered_pc" value="true" /> -->
+        <!-- <arg name="filters" value="pointcloud" /> -->
+        <arg name="clip_distance" value="0.15" />
+        <arg name='enable_depth' value='true' /> 
+        <arg name="align_depth" value="true" />
+        <arg name="color_fps" value="30" />
+        <arg name="depth_fps" value="30" />
+    </include>
+    <!-- Reconstruction -->
+    <include file="$(find industrial_reconstruction)/launch/reconstruction.launch">
+        <arg name="depth_image_topic" value="/camera/depth/image_rect_raw" />
+        <arg name="color_image_topic" value="/camera/color/image_raw" />
+        <arg name="camera_info_topic" value="/camera/color/camera_info" />
+    </include>
+    <!-- Moveit Commander -->
+    <!-- <node name="scanning_sequence" pkg="ur10e_examples" type="scanning_sequence.py" output="screen" /> -->
+</launch>

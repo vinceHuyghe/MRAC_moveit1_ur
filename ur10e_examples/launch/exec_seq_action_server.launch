@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find ur10e_moveit_config)/launch/demo.launch"/>
+    <include file="$(find move_group_utils)/launch/mgu_services.launch" />   
+    <node name="exec_seq_action_server" pkg="ur10e_examples" type="exec_seq_action_server.py" output="screen"/>
+    <node name="exec_seq_action_client" pkg="ur10e_examples" type="exec_seq_action_client.py" output="screen"/>
+</launch>

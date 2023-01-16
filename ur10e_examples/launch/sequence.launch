@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find ur10e_moveit_config)/launch/demo.launch" />
+    <include file="$(find move_group_utils)/launch/mgu_services.launch" />
+    <node name="sequence" pkg="ur10e_examples" type="sequence.py" output="screen" />
+</launch>
